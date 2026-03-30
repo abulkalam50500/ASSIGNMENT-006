@@ -1,0 +1,22 @@
+[
+    {
+        "menu_name":"Products",
+        "menu_url":"/products"
+    },
+    {
+        "menu_name":"Features",
+        "menu_url":"/features"
+    },
+    {
+        "menu_name":"Pricing",
+        "menu_url":"/pricing"
+    },
+    {
+        "menu_name":"Testimonials",
+        "menu_url":"/testimonials"
+    },
+    {
+        "menu_name":"FAQ",
+        "menu_url":"/faq"
+    }
+]
