@@ -2,6 +2,7 @@
 import './App.css'
 import Nabvar from './components/common/Nabvar'
 import { Suspense, use, useState } from 'react';
+import { ToastContainer, Bounce } from 'react-toastify';
 import Slider from './components/slider/Slider';
 import Counter from './components/counter/Counter';
 import DigitalTools from './components/ditigal_tools/DigitalTools';
@@ -52,8 +53,25 @@ function App() {
 
   const [cartItem, setCartItem] = useState([]);
 
+  const TotalAmount = cartItem.reduce((accumulator, currentValue) => {
+      return accumulator + currentValue?.price?.amount;
+    }, 0);
+
+
+
   return (
     <>
+      <ToastContainer position="top-right"
+        autoClose={5000}
+        hideProgressBar={false}
+        newestOnTop={false}
+        closeOnClick={false}
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
+        theme="light"
+        transition={Bounce} />
       <Suspense fallback={loading_tag}>
         <header className='w-400 max-w-full mx-auto shadow '>
           {/* <Suspense fallback={loading_tag}> */}
@@ -77,7 +95,7 @@ function App() {
 
         <div id="digital_tools" className='w-400 max-w-full mx-auto '>
           {/* <Suspense fallback={loading_tag}> */}
-          <DigitalTools cartItem={cartItem} setCartItem={setCartItem} DigiToolsResData={DigiToolsResData} />
+          <DigitalTools TotalAmount={TotalAmount} cartItem={cartItem} setCartItem={setCartItem} DigiToolsResData={DigiToolsResData} />
 
         </div>
       </Suspense>

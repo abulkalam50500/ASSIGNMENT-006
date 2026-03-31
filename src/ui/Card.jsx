@@ -1,9 +1,10 @@
 import React, { useState } from 'react';
 import Item from './Item';
+import { toast,Bounce } from 'react-toastify';
 import { Check } from 'lucide-react';
-const Card = ({ item,cartItem,setCartItem }) => {
+const Card = ({ item, cartItem, setCartItem,CardBtnCheck,setCardBtnCheck }) => {
 
-    const { title, tag,image, description, price, features } = item;
+    const { title, tag, image, description, price, features } = item;
 
     const tagStyles = {
         'Best Seller': 'badge-warning',
@@ -11,19 +12,33 @@ const Card = ({ item,cartItem,setCartItem }) => {
         'New': 'badge-success'
     };
 
-    const [CardBtnCheck,setCardBtnCheck] = useState(false);
+    
 
-    const HandleCartBtnCheck=async(btn_status)=>{
+    const HandleCartBtnCheck = async (btn_status) => {
 
-        setCardBtnCheck(btn_status);
+        const updateBtnStaus = [...CardBtnCheck,btn_status];
+        setCardBtnCheck(updateBtnStaus);
 
-        const updateCart = [...cartItem,item];
+        const updateCart = [...cartItem, item];
         setCartItem(updateCart);
+
+        toast.success('🦄 successfully item added!', {
+            position: "top-right",
+            autoClose: 5000,
+            hideProgressBar: false,
+            closeOnClick: false,
+            pauseOnHover: true,
+            draggable: true,
+            progress: undefined,
+            theme: "light",
+            transition: Bounce,
+        });
 
     }
 
     return (
         <div>
+            
             <div className="card w-96 bg-base-100 shadow-sm">
                 <div className="card-body">
                     <div className='flex justify-end'>
@@ -52,7 +67,7 @@ const Card = ({ item,cartItem,setCartItem }) => {
 
                     </ul>
                     <div className="mt-6">
-                        <button className={`btn btn-block ${!CardBtnCheck?'bg-linear-to-r from-[#4F39F6] via-[#7424fd] to-[#9467e2]':'bg-linear-to-r from-[#99261e] via-[#e66a54] to-[#e2997c]'} text-white font-bold rounded-full`} onClick={()=>{HandleCartBtnCheck(true)}}>{CardBtnCheck?(<><Check />  Already Added.</>):'Buy Now'}</button>
+                        <button className={`btn btn-block ${!CardBtnCheck.includes(title) ? 'bg-linear-to-r from-[#4F39F6] via-[#7424fd] to-[#9467e2]' : 'bg-linear-to-r from-[#99261e] via-[#e66a54] to-[#e2997c]'} text-white font-bold rounded-full`} onClick={() => { HandleCartBtnCheck(title) }}>{CardBtnCheck.includes(title)? (<><Check />  Already Added.</>) : 'Buy Now'}</button>
                     </div>
                 </div>
             </div>
