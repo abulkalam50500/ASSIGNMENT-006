@@ -16,6 +16,13 @@ const Card = ({ item, cartItem, setCartItem,CardBtnCheck,setCardBtnCheck }) => {
 
     const HandleCartBtnCheck = async (btn_status) => {
 
+
+         const checkAlreadyItemAdded = cartItem.some(item=>item.title==btn_status);
+
+         if(!checkAlreadyItemAdded){
+
+    
+
         const updateBtnStaus = [...CardBtnCheck,btn_status];
         setCardBtnCheck(updateBtnStaus);
 
@@ -33,6 +40,20 @@ const Card = ({ item, cartItem, setCartItem,CardBtnCheck,setCardBtnCheck }) => {
             theme: "light",
             transition: Bounce,
         });
+             }else{
+                
+        toast.warn(' this item already added!', {
+            position: "top-right",
+            autoClose: 5000,
+            hideProgressBar: false,
+            closeOnClick: false,
+            pauseOnHover: true,
+            draggable: true,
+            progress: undefined,
+            theme: "light",
+            transition: Bounce,
+        });
+             }
 
     }
 
