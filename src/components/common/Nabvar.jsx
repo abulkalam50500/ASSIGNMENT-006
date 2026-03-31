@@ -2,9 +2,9 @@ import React, { useState } from 'react';
 import { use } from 'react';
 import Links from '../../ui/Links';
 import { ShoppingCart,Menu, X } from 'lucide-react';
-const Nabvar = ({ MenuResData }) => {
+const Nabvar = ({ MenuResData,cartItem }) => {
 
-     const [openMenu,useOpenMenu] = useState(false);
+     const [openMenu,setOpenMenu] = useState(false);
 
 
     const MenuData = use(MenuResData);
@@ -14,7 +14,7 @@ const Nabvar = ({ MenuResData }) => {
     return (
         <div className='w-300 max-w-full mx-auto'>
             <nav className='flex justify-between items-center p-6.5'>
-                <div className='nav-logo flex items-center gap-2' onClick={()=>{useOpenMenu(!openMenu)}}>
+                <div className='nav-logo flex items-center gap-2' onClick={()=>{setOpenMenu(!openMenu)}}>
                     
                     {
                         openMenu?<X className='md:hidden' />:<Menu className='md:hidden' />
@@ -38,7 +38,11 @@ const Nabvar = ({ MenuResData }) => {
                 </div>
                 <div className='nav-action'>
                     <ul className='flex items-center gap-4 font-semibold'>
-                        <li><ShoppingCart /></li>
+                        <li className='flex items-start'><ShoppingCart />
+                         <p className='rounded-full absolute top-3.6 right-17.25 md:top-5 md:right-67.5'>
+                            <sup className='bg-[#0f9e86] pl-2.5 pr-2.25 pt-1.25 pb-1  text-white rounded-full'>{cartItem?.length||0}</sup>
+                            </p>
+                            </li>
                         <li>Login</li>
                         <li className='hidden md:block'><button className='btn rounded-full bg-linear-to-r from-[#4F39F6] via-[#7424fd] to-[#b995f6] text-white'>Get Started</button></li>
                     </ul>
