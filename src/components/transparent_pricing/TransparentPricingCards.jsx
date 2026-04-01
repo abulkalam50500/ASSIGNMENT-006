@@ -46,7 +46,7 @@ const TransparentPricingCards = () => {
                         <p className='text-[#FFFF]'>Best for professionals</p>
                     </div>
                     <div className="pricing-info mt-2">
-                        <h2 className='text-[40px] text-[#FFFF] font-bold'>$0<span className='text-[#FFFF] text-[20px] font-normal'>/Month</span></h2>
+                        <h2 className='text-[40px] text-[#FFFF] font-bold'>$29<span className='text-[#FFFF] text-[20px] font-normal'>/Month</span></h2>
 
                     </div>
 
