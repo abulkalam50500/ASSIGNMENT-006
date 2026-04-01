@@ -11,7 +11,7 @@ const [CardBtnCheck, setCardBtnCheck] = useState([]);
   const DigiToolsData = use(DigiToolsResData);
 
     return (
-        <div className='w-300 max-w-full mx-auto py-20 md:py-28'>
+        <div className='w-300 max-w-full mx-auto py-20'>
 
             {/* // digitools headline */}
             <DigitoolsHead activePremiumBtn={activePremiumBtn} setActivePremiumBtn={setActivePremiumBtn} cartItem={cartItem} setCartItem={setCartItem} />

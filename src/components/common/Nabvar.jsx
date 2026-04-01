@@ -40,7 +40,7 @@ const Nabvar = ({ MenuResData,cartItem }) => {
                     <ul className='flex items-center gap-4 font-semibold'>
                         <li className='flex items-start'><ShoppingCart />
                          <p className='rounded-full absolute top-3.6 right-17.25 md:top-5 md:right-67.5'>
-                            <sup className='bg-[#0f9e86] pl-2.5 pr-2.25 pt-1.25 pb-1  text-white rounded-full'>{cartItem?.length||0}</sup>
+                            <sup className='bg-[#b97f14] pl-2.5 pr-2.25 pt-1.25 pb-1  text-white rounded-full'>{cartItem?.length||0}</sup>
                             </p>
                             </li>
                         <li>Login</li>

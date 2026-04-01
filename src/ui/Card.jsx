@@ -88,7 +88,7 @@ const Card = ({ item, cartItem, setCartItem,CardBtnCheck,setCardBtnCheck }) => {
 
                     </ul>
                     <div className="mt-6">
-                        <button className={`btn btn-block ${!CardBtnCheck.includes(title) ? 'bg-linear-to-r from-[#4F39F6] via-[#7424fd] to-[#9467e2]' : 'bg-linear-to-r from-[#99261e] via-[#e66a54] to-[#e2997c]'} text-white font-bold rounded-full`} onClick={() => { HandleCartBtnCheck(title) }}>{CardBtnCheck.includes(title)? (<><Check />  Already Added.</>) : 'Buy Now'}</button>
+                        <button className={`btn btn-block ${!CardBtnCheck.includes(title) ? 'bg-linear-to-r from-[#4F39F6] via-[#7424fd] to-[#9467e2]' : 'bg-gradient-to-r from-[#6b7280] via-[#9ca3af] to-[#d1d5db]'} text-white font-bold rounded-full`} onClick={() => { HandleCartBtnCheck(title) }}>{CardBtnCheck.includes(title)? (<><Check />  Already Added.</>) : 'Buy Now'}</button>
                     </div>
                 </div>
             </div>

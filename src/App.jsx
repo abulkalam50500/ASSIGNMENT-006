@@ -6,6 +6,8 @@ import { ToastContainer, Bounce } from 'react-toastify';
 import Slider from './components/slider/Slider';
 import Counter from './components/counter/Counter';
 import DigitalTools from './components/ditigal_tools/DigitalTools';
+import Started from './components/started/Started';
+import TransparentPricing from './components/transparent_pricing/TransparentPricing';
 import { X } from 'lucide-react';
 
 // Menu data fetch
@@ -54,8 +56,8 @@ function App() {
   const [cartItem, setCartItem] = useState([]);
 
   const TotalAmount = cartItem.reduce((accumulator, currentValue) => {
-      return accumulator + currentValue?.price?.amount;
-    }, 0);
+    return accumulator + currentValue?.price?.amount;
+  }, 0);
 
 
 
@@ -98,6 +100,18 @@ function App() {
           <DigitalTools TotalAmount={TotalAmount} cartItem={cartItem} setCartItem={setCartItem} DigiToolsResData={DigiToolsResData} />
 
         </div>
+
+        <div id="digital_tools" className='w-400 max-w-full mx-auto bg-[#F9FAFC]'>
+          <Started />
+        </div>
+
+
+        <div id="TransparentPricing" className='w-400 max-w-full mx-auto'>
+          <TransparentPricing />
+        </div>
+
+
+
       </Suspense>
 
 
