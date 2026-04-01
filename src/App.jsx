@@ -8,6 +8,8 @@ import Counter from './components/counter/Counter';
 import DigitalTools from './components/ditigal_tools/DigitalTools';
 import Started from './components/started/Started';
 import TransparentPricing from './components/transparent_pricing/TransparentPricing';
+import ReadyToTransform from './components/ready_to_transform/ReadyToTransform';
+import Footer from './components/footer/Footer';
 import { X } from 'lucide-react';
 
 // Menu data fetch
@@ -109,6 +111,14 @@ function App() {
         <div id="TransparentPricing" className='w-400 max-w-full mx-auto'>
           <TransparentPricing />
         </div>
+
+        <div id="ReayToTransform" className='w-400 max-w-full mx-auto bg-linear-to-r from-[#4F39F6] to-[#9514FA]'>
+          <ReadyToTransform />
+        </div>
+
+        <footer id="Footer" className='w-400 max-w-full mx-auto bg-[#101727]'>
+          <Footer />
+        </footer>
 
 
 
